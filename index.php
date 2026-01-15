@@ -8,6 +8,13 @@
 </head>
 
 <body>
+
+
+    <a href="edit_profil.php ?id=<?= $data['id']; ?> " class="fs-3 text-primary">
+        <button type="button" class="btn btn-primary" style="padding:10px; margin: 30px 0 30px 70px; border-radius: 10px;"><i class="bi bi-plus-square"></i> Edit Profil</button>
+    </a>
+
+
     <table border="1" cellpadding="10" cellspacing="0" style="text-align: center; margin: 100px 0 0 380px;">
         <thead>
             <tr>
@@ -35,7 +42,7 @@
                     <td><?php echo $data['nama_mhs']; ?></td>
                     <td><?php echo $data['tgl_lahir']; ?></td>
                     <td><?php echo $data['alamat']; ?></td>
-                    <td><button type="Edit" name="edit" style="background-color: #00d3bb; margin-right: 12px; width: 50px; border-radius: 6px;"><a href="./mahasiswa1/update.php ?id=<? echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Edit</a></button>
+                    <td><button type="Edit" name="edit" style="background-color: #00d3bb; margin-right: 12px; width: 50px; border-radius: 6px;"><a href="./mahasiswa1/update.php?id=<? echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Edit</a></button>
                         |<button type="Delete" name="delete" style="background-color: #00d3bb; margin-left: 12px; border-radius: 6px;"><a href="./mahasiswa1/hapus.php ?id=<? echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Hapus</a></button></td>
                 </tr>
             </tbody>

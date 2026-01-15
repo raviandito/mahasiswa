@@ -30,8 +30,8 @@
 
                 </div>
                 <div class="mb-3">
-                    <label for="notelp" class="form-label">Nomor Telepn</label>
-                    <input type="text" class="form-control" name="notelp" required >
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" required >
                 </div>
 
                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
@@ -51,7 +51,7 @@
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], algo: PASSWORD_DEFAULT);
         $password2 = password_hash($_POST['password2'], algo: PASSWORD_DEFAULT);
-        $notelp = $_POST['notelp'];
+        $email = $_POST['email'];
     
 
         $password_raw = $_POST['password'];
@@ -61,6 +61,7 @@
             echo "<script>
                     alert('konfirmasi password tidak sesuai!');
             </script>";
+
             return false;
         }
 
@@ -70,14 +71,18 @@
             echo "<script>
                     alert('akun anda sudah terdaftar');
             </script>";
+            
+           
+
         }
 
-        $sql = mysqli_query($koneksi, "INSERT INTO user(username, password, notelp)
-    VALUES ('$username', '$password', '$notelp')");
+        $sql = mysqli_query($koneksi, "INSERT INTO user(username, password, email)
+    VALUES ('$username', '$password', '$email')");
 
         if ($sql) {
             echo "Register berhasil ";
-      
+            echo "<a href= login.php>Login akun anda</a>";
+             
         } else {
             echo "input buku tamu gagal";
         }
