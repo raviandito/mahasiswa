@@ -21,7 +21,7 @@
         </thead>
 
         <?php
-        include('../koneksi.php');
+        include('koneksi.php');
 
         $tampil = mysqli_query($koneksi, 'SELECT * FROM mahasiswa');
         $no = 1;
@@ -35,8 +35,8 @@
                     <td><?php echo $data['nama_mhs']; ?></td>
                     <td><?php echo $data['tgl_lahir']; ?></td>
                     <td><?php echo $data['alamat']; ?></td>
-                    <td><button type="Edit" name="edit" style="background-color: #00d3bb; margin-right: 12px; width: 50px; border-radius: 6px;"><a href="update.php?nim=<?php echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Edit</a></button>
-                        |<button type="Delete" name="delete" style="background-color: #00d3bb; margin-left: 12px; border-radius: 6px;"><a href="hapus.php?nim=<?php echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Hapus</a></button></td>
+                    <td><button type="Edit" name="edit" style="background-color: #00d3bb; margin-right: 12px; width: 50px; border-radius: 6px;"><a href="./mahasiswa1/update.php ?id=<? echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Edit</a></button>
+                        |<button type="Delete" name="delete" style="background-color: #00d3bb; margin-left: 12px; border-radius: 6px;"><a href="./mahasiswa1/hapus.php ?id=<? echo $data['nim'] ?>" style="text-decoration: none; color:#1d232a;">Hapus</a></button></td>
                 </tr>
             </tbody>
         <?php
@@ -45,7 +45,7 @@
         ?>
     </table>
 
-    <a href="proses.php" style="margin-left: 380px; text-decoration: none; color:blue">Input data kembali</a>
+    <a href="mahasiswa1/proses.php" style="margin-left: 380px; text-decoration: none; color:blue">Input data kembali</a>
 </body>
 
 </html>

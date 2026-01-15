@@ -74,16 +74,18 @@
         $nama_mhs = $_POST['nama'];
         $tgl_lahir = $_POST['tanggal'];
         $alamat = $_POST['alamat'];
+        $prodi_id = $_POST['prodi_id'];
 
-        $sql = mysqli_query($koneksi, "INSERT INTO mahasiswa(nim, nama_mhs, tgl_lahir, alamat)
-    VALUES ('$nim', '$nama_mhs', '$tgl_lahir', '$alamat')");
+        $sql = mysqli_query($koneksi, "INSERT INTO mahasiswa(nim, nama_mhs, tgl_lahir, alamat,prodi_id)
+    VALUES ('$nim', '$nama_mhs', '$tgl_lahir', '$alamat', '$prodi_id')");
 
         if ($sql) {
             echo "data berhasil di input ";
 
-            echo "<br> <a href=list.php>tampilkan data</a>";
+            echo "<br> <a href=../index.php>tampilkan data</a>";
         } else {
             echo "input buku tamu gagal";
+            echo "error: ".mysqli_error($koneksi);
         }
     }
     ?>

@@ -44,7 +44,7 @@ $data = mysqli_fetch_array($edit);
 if (isset($_POST['submit'])) {
     $update = mysqli_query($koneksi, "UPDATE mahasiswa SET nim='$_POST[nim]', nama_mhs='$_POST[nama]', tgl_lahir='$_POST[tanggal]', alamat='$_POST[alamat]' WHERE nim=$_GET[nim]");
     if ($update) {
-        header("Location: list.php");
+        header("Location: ../index.php");
     } else {
         echo "edit data gagal";
     }

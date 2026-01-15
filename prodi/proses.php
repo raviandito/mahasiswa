@@ -62,7 +62,7 @@
         if ($sql) {
             echo "data berhasil di input ";
 
-            echo "<br> <a href=index.php >tampilkan data</a>";
+            echo "<br> <a href=list.php >tampilkan data</a>";
         } else {
             echo "input buku tamu gagal";
         }
